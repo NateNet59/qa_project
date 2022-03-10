@@ -16,5 +16,11 @@
   },
   "homepage": "https://github.com/NateNet59/qa_project#readme",
   "keywords": [],
+  "dependencies": {
+    "selenium-webdriver": "^4.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.21"
+  },
   "description": ""
 }
