@@ -12,8 +12,8 @@ describe("Adding an item to the cart",() => {
         await driver.quit();
     })
 
-    const extravaganzza: By= By.xpath("a.btn.media__btn.js-orderNow");
-    const cart: By= By.xpath();
+    const extravaganzza: By= By.xpath('//a[@class="btn media__btn js-orderNow"][2]');
+    const cart: By= By.xpath('//a[@class="site-nav__toggle site-nav__toggle--cart js-cart-icon"]');
 
     test("adding an item to the cart", async () => {
         await driver.findElement(extravaganzza).sendKeys("ExtavaganZZa\n")
