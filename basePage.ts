@@ -1,8 +1,10 @@
 import {Builder, By, Capabilities, until, WebDriver, WebElement} from "selenium-webdriver";
+
 const chromedriver = require("chromedriver")
 
 interface Options {
     driver?: WebDriver;
+
     url?: string; 
 
 }
@@ -10,6 +12,7 @@ interface Options {
 export class BasePage {
     driver: WebDriver;
     url: string;
+
 
     constructor(options?: Options) {
         if (options && options.driver) this.driver = options.driver;
@@ -25,6 +28,7 @@ export class BasePage {
             "BasePage.navigate() needs a url defined on the page objects, or one passed in."
         )
     }
+
 
     async getElement(elementBy: By): Promise<WebElement> {
         await this.driver.wait(until.elementLocated(elementBy));
@@ -46,4 +50,6 @@ export class BasePage {
     async getAttribute(elementBy: By, attribute: string): Promise<string> {
         return (await this.getElement(elementBy)).getAttribute(attribute)
     }
+
 }
+

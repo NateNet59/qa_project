@@ -17,6 +17,9 @@
   "homepage": "https://github.com/NateNet59/qa_project#readme",
   "keywords": [],
   "dependencies": {
+    "@types/selenium-webdriver": "^4.0.18",
+    "chromedriver": "^99.0.0",
+    "geckodriver": "^3.0.1",
     "selenium-webdriver": "^4.1.1"
   },
   "devDependencies": {
