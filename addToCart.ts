@@ -1,12 +1,12 @@
 import {By} from "selenium-webdriver"
 import {BasePage} from "./basePage"
+import {pageObjects} from "./pageObjects"
 
 const chromedriver = require("chromedriver")
 
 describe("Adding an item to the cart",() => {
     beforeEach(async() => {
         await driver.get("https://www.dominos.com/en/pages/order/#!/section/Food/category/Pizza/");
-        // Expect for the website to open
     });
     afterAll(async () => {
         await driver.quit();
