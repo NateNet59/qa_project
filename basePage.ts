@@ -1,31 +1,35 @@
-import {Builder, By, Capabilities, until, WebDriver, WebElement} from "selenium-webdriver"
+import {Builder, By, Capabilities, until, WebDriver, WebElement} from "selenium-webdriver";
+
 const chromedriver = require("chromedriver")
 
 interface Options {
     driver?: WebDriver;
-    /* if no driver is supplied, we make one or use the constructor to make one*/
-    url?: string;
-    /* if no url is supplied, we make one or use the constructor to make one*/
+
+    url?: string; 
+
 }
 
 export class BasePage {
     driver: WebDriver;
     url: string;
 
-    constructor(options?:Options) {
+
+    constructor(options?: Options) {
         if (options && options.driver) this.driver = options.driver;
-        else 
-        this.driver = new Builder() .withCapabilities(Capabilities.chrome()).build()
-        if (options && options.url) this.url = options.url
+        else
+        this.driver = new Builder().withCapabilities(Capabilities.chrome()).build()
+        if(options && options.url) this.url = options.url
     }
     async navigate(url?: string): Promise<void> {
-       if (url) return await this.driver.get(url);
-       else if (this.url) return await this.driver.get(this.url) 
-       else
-       return Promise.reject(
-           "BasePage.navigate() needs a url defined on the page objects, or one passed"
-       )
+        if (url) return await this.driver.get(url);
+        else if (this.url) return await this.driver.get(this.url)
+        else
+        return Promise.reject(
+            "BasePage.navigate() needs a url defined on the page objects, or one passed in."
+        )
     }
+
+
     async getElement(elementBy: By): Promise<WebElement> {
         await this.driver.wait(until.elementLocated(elementBy));
         let element = await this.driver.findElement(elementBy);
@@ -46,7 +50,6 @@ export class BasePage {
     async getAttribute(elementBy: By, attribute: string): Promise<string> {
         return (await this.getElement(elementBy)).getAttribute(attribute)
     }
+
 }
-
-
 
