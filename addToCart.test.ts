@@ -6,6 +6,7 @@ test("add to cart", async () => {
     await dominos.navigate()
     await dominos.click(dominos.orderOnline)
     await dominos.click(dominos.carryOut)
+    await dominos.click(dominos.zipcode)
     await dominos.setInput(dominos.zipcode, "84081")
     await dominos.click(dominos.searchLocations)
     await dominos.click(dominos.storePickUp)
