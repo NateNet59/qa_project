@@ -16,9 +16,10 @@ export class Dominos extends BasePage {
     zipcode: By = By.xpath ('//input[@id="Postal_Code_Sep"]')
     searchLocations: By = By.xpath ('//button[@data-quid="locator-search-button"]') 
     storePickUp: By = By.xpath ('//a[@data-quid="locations-search-6676-order-carryout-button"]')
-    extravaganzza: By= By.xpath('(//a[@class="btn media__btn js-orderNow"])[2]')
-    cart: By= By.xpath('//a[@class="site-nav__toggle site-nav__toggle--cart js-cart-icon"]')
-    specialty: By = By.xpath('(//a[@class="grid__cell--1/3@desktop grid__cell--1/2 grid__card"])[0]')
+    extravaganzza: By = By.xpath('(//a[@class="btn media__btn js-orderNow"])[2]')
+    cart: By = By.xpath('//a[@class="site-nav__toggle site-nav__toggle--cart js-cart-icon"]')
+    specialty: By = By.xpath('(//a[@class="grid__cell--1/3@desktop grid__cell--1/2 grid__card"])[1]')
+    nateCarry: By = By.xpath('//span[@class="Carryout c-carryout circ-icons__icon  circ-icons__icon--carryout"]')
 
     
     constructor(){
